@@ -12,10 +12,9 @@ import javax.persistence.Persistence;
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
-import java.util.*;
 
 
-@WebServlet(name = "PersonInfo", urlPatterns = { "/PersonInfo" })
+@WebServlet(name = "Root", urlPatterns = {"/Root"})
 public class PersonInfo extends HttpServlet {
 	PersonDao daop;
 	@Override

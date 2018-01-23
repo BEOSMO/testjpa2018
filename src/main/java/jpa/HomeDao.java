@@ -13,6 +13,9 @@ public class HomeDao implements GenericDao<Home, Integer> {
     public Home read(Integer id, Class c) {
         return null;
     }
+    public List<Home> readAll() {
+        return EntityManagerHelper.getEntityManager().createQuery("select p from Home as p").getResultList();
+    }
 
     public Person read(){
         return (Person) EntityManagerHelper.getEntityManager().createQuery("select p from Home as p").getResultList();

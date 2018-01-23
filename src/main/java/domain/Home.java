@@ -17,10 +17,12 @@ import javax.persistence.OneToMany;
 	private Person proprio;
 	
 	private List<Heater> heaters;
-	
-	
-	
-	@Id
+
+		public Home() {
+		}
+
+
+		@Id
 	@GeneratedValue
 	public int getId() {
 		return id;
@@ -33,7 +35,7 @@ import javax.persistence.OneToMany;
 	}
 
 	
-	public Home() {
+	public Home(String rooms, String surface) {
 		
 	}
 	
@@ -46,6 +48,14 @@ import javax.persistence.OneToMany;
 		this.proprio = proprio;
 		
 	}
+
+		public Home(long surface, int rooms) {
+			super();
+			this.surface = surface;
+			this.rooms = rooms;
+			//this.proprio = proprio;
+
+		}
 
 
     

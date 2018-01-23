@@ -1,5 +1,6 @@
+servlet\PersonInfo.class
 jpa\ElectronicDeviceDao.class
 jpa\HomeDao.class
+servlet\HomeInfo.class
 jpa\PersonDao.class
-servlet\PersonInfo.class
 jpa\HeaterDao.class
