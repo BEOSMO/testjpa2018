@@ -1,4 +1,5 @@
 package domain;
+import  domain.ElectronicDevice;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -39,8 +40,8 @@ import javax.persistence.ManyToOne;
 		public void setHome(Home home) {
 			this.home = home;
 		}
-	    
-	    
-	    
-	    
+
+
+
+
 }

@@ -16,7 +16,6 @@ import javax.persistence.OneToMany;
 	@Entity
 	public class Person {
 	
-	@Column(name="PERSON_NAME")
     private int id;
     private String firstName;
     private String name;
@@ -92,7 +91,7 @@ import javax.persistence.OneToMany;
     	
         return "Person [id=" + id + ", name=" + name + "]";
     }
-    
+
 
     
 

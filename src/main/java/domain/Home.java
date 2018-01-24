@@ -6,16 +6,20 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+import javax.ws.rs.Produces;
+import javax.ws.rs.core.MediaType;
 
-	@Entity
+@Entity
 	public class Home {
-	
+
 	private int id;
-	
+
 	private long surface;
 	private int rooms;
 	private Person proprio;
-	
+
 	private List<Heater> heaters;
 
 		public Home() {
@@ -34,19 +38,19 @@ import javax.persistence.OneToMany;
 		this.id = id;
 	}
 
-	
+
 	public Home(String rooms, String surface) {
-		
+
 	}
-	
-	
-	
+
+
+
     public Home(long surface, int rooms, Person proprio) {
 		super();
 		this.surface = surface;
 		this.rooms = rooms;
 		this.proprio = proprio;
-		
+
 	}
 
 		public Home(long surface, int rooms) {
@@ -58,7 +62,7 @@ import javax.persistence.OneToMany;
 		}
 
 
-    
+
 
 
 	public long getSurface() {
@@ -94,7 +98,7 @@ import javax.persistence.OneToMany;
 	}
 
 
-	
+
 	@ManyToOne
 	public Person getProprio() {
 		return proprio;
@@ -105,11 +109,28 @@ import javax.persistence.OneToMany;
 	public void setProprio(Person proprio) {
 		this.proprio = proprio;
 	}
-	
-    
-    
+
+
+        @GET
+        @Path("/home")
+        @Produces(MediaType.APPLICATION_JSON)
+        public Home getHome() {
+            Home h = new Home();
+            h.setName("toto");
+            Heater h1 = new Heater();
+            h1.setPower("500w");
+            Heater h2 = new Heater();
+            h2.setPower("600w");
+            h.addDevice(h1);
+            h.addDevice(h2);
+            return h;
+        }
+
+
+
+
 }
 
-	
+
 
 
