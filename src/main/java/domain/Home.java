@@ -6,10 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+
 
 @Entity
 	public class Home {
@@ -109,25 +106,6 @@ import javax.ws.rs.core.MediaType;
 	public void setProprio(Person proprio) {
 		this.proprio = proprio;
 	}
-
-
-        @GET
-        @Path("/home")
-        @Produces(MediaType.APPLICATION_JSON)
-        public Home getHome() {
-            Home h = new Home();
-            h.setName("toto");
-            Heater h1 = new Heater();
-            h1.setPower("500w");
-            Heater h2 = new Heater();
-            h2.setPower("600w");
-            h.addDevice(h1);
-            h.addDevice(h2);
-            return h;
-        }
-
-
-
 
 }
 
