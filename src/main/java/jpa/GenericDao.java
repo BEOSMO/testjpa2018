@@ -2,13 +2,13 @@ package jpa;
 
 import java.io.Serializable;
 
-public interface GenericDao<T, PK extends Serializable> {
+public interface GenericDao<T> {
 
-	T create(T t);
+	void create(T t);
 
-	T read(PK id, Class c);
+	T read(int id);
 
-	T update(T t);
+	void update(T t);
 
 	void delete(T t);
 
